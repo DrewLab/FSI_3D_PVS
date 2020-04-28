@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=16:00:00
+#PBS -l pmem=16gb
+#PBS -j oe
+
+cd /gpfs/scratch/rpk5196/Comsol/Brain_3D/sleep/Kevin_vessel/Circular_PVS2/
+module load comsol oraclejdk
+comsol -nn 8 batch -inputfile circular_model.class A -outputfile Sleep_circleA.mph -tmpdir /gpfs/scratch/rpk5196/.comsol -batchlog circleA.log
